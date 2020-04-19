@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f989118003.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <form class="form-inline" id="search-form">
+              <div class="form-group mx-sm-3 mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search for a City"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="city-input"
+                />
+              </div>
+              <div class="btn-group mr-2" role="group">
+                <button type="submit" class="btn btn-secondary">
+                  Search
+                </button>
+              </div>
+              <div class="btn-group mr-2" role="group">
+                <button
+                  type="submit"
+                  class="btn btn-warning"
+                  id="button-current"
+                >
+                  Current
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="row">
+            <h1></h1>
+          </div>
+          <div class="row">
+            <h2></h2>
+          </div>
+          <img />
+          <div class="row">
+            <h3>
+              19ºC
+            </h3>
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h5>
+              Sunny
+            </h5>
+          </div>
+          <div class="row">
+            <div class="row row-cols-5">
+              <div class="col">
+                <div class="card text-center" style="width: 5rem;">
+                  <p class="card-header">Day 1</p>
+                  <div class="card-body">
+                    <i class="fas fa-cloud-sun"></i>
+                    <br />
+                    Sunny
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card text-center" style="width: 5rem;">
+                  <p class="card-header">Day 2</p>
+                  <div class="card-body">
+                    <i class="fas fa-cloud-showers-heavy"></i>
+                    <br />
+                    Rain
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card text-center" style="width: 5rem;">
+                  <p class="card-header">Day 3</p>
+                  <div class="card-body">
+                    <i class="fas fa-cloud"></i>
+                    <br />
+                    Cloudy
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card text-center" style="width: 5rem;">
+                  <p class="card-header">Day 4</p>
+                  <div class="card-body">
+                    <i class="fas fa-poo-storm"></i>
+                    <br />
+                    Storm
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card text-center" style="width: 5rem;">
+                  <p class="card-header">Day 5</p>
+                  <div class="card-body">
+                    <i class="fas fa-smog"></i>
+                    <br />
+                    Fog
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
