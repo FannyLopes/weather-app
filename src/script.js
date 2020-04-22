@@ -19,7 +19,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("h3");
   temperatureElement.innerHTML = `${temperature}ºC`;
-  let description = document.querySelector("h5");
+  let description = document.querySelector("h4");
   description.innerHTML = response.data.weather[0].main;
 }
 function showCity(event) {
@@ -42,7 +42,7 @@ function weatherCurrentLocation(response) {
   let temperatureElement = document.querySelector("h3");
   temperatureElement.innerHTML = `${temperature}ºC`;
   let description = response.data.weather[0].main;
-  let descriptionElement = document.querySelector("h5");
+  let descriptionElement = document.querySelector("h4");
   descriptionElement.innerHTML = `${description}`;
 }
 

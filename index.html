@@ -49,23 +49,35 @@
               </div>
             </form>
           </div>
-          <div class="row">
+          <div class="row" id="city-name">
             <h1></h1>
           </div>
-          <div class="row">
+          <div class="row" id="date">
             <h2></h2>
           </div>
-          <img />
-          <div class="row">
-            <h3>
-              19ºC
-            </h3>
-            <h4></h4>
-          </div>
-          <div class="row">
-            <h5>
-              Sunny
-            </h5>
+          <div class="row" id="forecast">
+            <div class="col-6" id="weather">
+              <h3>
+                <img src="img/sunny.png" alt="Sunny" />
+                19ºC | ºF
+              </h3>
+              <h4>
+                Sunny
+              </h4>
+            </div>
+            <div class="col-6" id="other-indicators">
+              <ul>
+                <li>
+                  Precipitation: 0%
+                </li>
+                <li>
+                  Humidity: 79%
+                </li>
+                <li>
+                  Wind: 2km/h
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="row">
             <div class="row row-cols-5">
@@ -124,14 +136,14 @@
         </div>
       </div>
     </div>
-    <p id="footer-line">
+    <small id="footer-line">
       This project was coded by
       <a href="mailito:fasnnygasparlopes@gmail.com">Fanny Lopes</a> and is
       <a href="https://github.com/FannyLopes/weather-app" target="_blank"
         >open-sourced on GitHub</a
       >
       and hosted by Netlify
-    </p>
+    </small>
     <script src="src/script.js"></script>
   </body>
 </html>

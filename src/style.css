@@ -32,10 +32,7 @@ h5 {
   font-size: 20px;
 }
 img {
-  width: 100px;
-  position: absolute;
-  left: 300px;
-  top: 150px;
+  width: 50px;
 }
 i {
   font-size: 25px;
@@ -53,9 +50,4 @@ i {
 .card.text-center:hover {
   cursor: pointer;
   background: #e1e1f2;
-}
-#footer-line {
-  font-size: 10px;
-  font-family: "Noto Sans KR", sans-serif;
-  margin: 10px 20px 10px 150px;
 }
