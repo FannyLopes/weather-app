@@ -10,16 +10,21 @@ let ListDays = [
 ];
 let today = ListDays[currentDate.getDay()];
 let hours = currentDate.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = currentDate.getMinutes();
-
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let showDate = document.querySelector("h2");
 showDate.innerHTML = `${today} ${hours}:${minutes}`;
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("h3");
+  let temperatureElement = document.querySelector("h4");
   temperatureElement.innerHTML = `${temperature}ºC`;
-  let description = document.querySelector("h4");
+  let description = document.querySelector("h3");
   description.innerHTML = response.data.weather[0].main;
 }
 function showCity(event) {
@@ -39,10 +44,10 @@ function weatherCurrentLocation(response) {
   let city = document.querySelector("h1");
   city.innerHTML = `${response.data.name}`;
   let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("h3");
+  let temperatureElement = document.querySelector("h4");
   temperatureElement.innerHTML = `${temperature}ºC`;
   let description = response.data.weather[0].main;
-  let descriptionElement = document.querySelector("h4");
+  let descriptionElement = document.querySelector("h3");
   descriptionElement.innerHTML = `${description}`;
 }
 

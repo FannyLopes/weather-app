@@ -19,116 +19,76 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <form class="form-inline" id="search-form">
-              <div class="form-group mx-sm-3 mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search for a City"
-                  autocomplete="off"
-                  autofocus="on"
-                  id="city-input"
-                />
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <button type="submit" class="btn btn-secondary">
-                  Search
-                </button>
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="submit"
-                  class="btn btn-warning"
-                  id="button-current"
-                >
-                  Current
-                </button>
-              </div>
-            </form>
-          </div>
-          <div class="row" id="city-name">
-            <h1></h1>
-          </div>
-          <div class="row" id="date">
-            <h2></h2>
-          </div>
-          <div class="row" id="forecast">
-            <div class="col-6" id="weather">
-              <h3>
-                <img src="img/sunny.png" alt="Sunny" />
-                19ºC | ºF
-              </h3>
+      <div class="weather-app">
+        <div class="row">
+          <form class="form-inline" id="search-form">
+            <div class="form-group mx-sm-3 mb-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for a City"
+                autocomplete="off"
+                autofocus="on"
+                id="city-input"
+              />
+            </div>
+            <div class="btn-group mr-2" role="group">
+              <button type="submit" class="btn btn-secondary">
+                Search
+              </button>
+            </div>
+            <div class="btn-group mr-2" role="group">
+              <button type="submit" class="btn btn-warning" id="button-current">
+                Current
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="row" id="city-name">
+          <h1>Lisbon</h1>
+        </div>
+        <div class="row" id="date">
+          <h2></h2>
+        </div>
+        <div class="row" id="weather-description">
+          <h3>
+            Sunny
+          </h3>
+        </div>
+        <div class="row" id="forecast">
+          <div class="col-6">
+            <div class="clearfix weather">
               <h4>
-                Sunny
+                <img src="img/sunny.png" alt="Sunny" class="float-left" />
+                <div class="float-left">
+                  19 <small><a href="#">ºC</a> | <a href="#">ºF</a></small>
+                </div>
               </h4>
             </div>
-            <div class="col-6" id="other-indicators">
-              <ul>
-                <li>
-                  Precipitation: 0%
-                </li>
-                <li>
-                  Humidity: 79%
-                </li>
-                <li>
-                  Wind: 2km/h
-                </li>
-              </ul>
-            </div>
           </div>
-          <div class="row">
-            <div class="row row-cols-5">
-              <div class="col">
-                <div class="card text-center" style="width: 5rem;">
-                  <p class="card-header">Day 1</p>
-                  <div class="card-body">
-                    <i class="fas fa-cloud-sun"></i>
-                    <br />
-                    Sunny
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card text-center" style="width: 5rem;">
-                  <p class="card-header">Day 2</p>
-                  <div class="card-body">
-                    <i class="fas fa-cloud-showers-heavy"></i>
-                    <br />
-                    Rain
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card text-center" style="width: 5rem;">
-                  <p class="card-header">Day 3</p>
-                  <div class="card-body">
-                    <i class="fas fa-cloud"></i>
-                    <br />
-                    Cloudy
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card text-center" style="width: 5rem;">
-                  <p class="card-header">Day 4</p>
-                  <div class="card-body">
-                    <i class="fas fa-poo-storm"></i>
-                    <br />
-                    Storm
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card text-center" style="width: 5rem;">
-                  <p class="card-header">Day 5</p>
-                  <div class="card-body">
-                    <i class="fas fa-smog"></i>
-                    <br />
-                    Fog
-                  </div>
+          <div class="col-6" id="other-indicators">
+            <ul>
+              <li>
+                Precipitation: 0%
+              </li>
+              <li>
+                Humidity: 79%
+              </li>
+              <li>
+                Wind: 2km/h
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row row-cols-5">
+            <div class="col">
+              <div class="card text-center" style="width: 5rem;">
+                <p class="card-header">Day 1</p>
+                <div class="card-body">
+                  <i class="fas fa-cloud-sun"></i>
+                  <br />
+                  Sunny
                 </div>
               </div>
             </div>
@@ -136,9 +96,9 @@
         </div>
       </div>
     </div>
-    <small id="footer-line">
+    <small class="footer-line">
       This project was coded by
-      <a href="mailito:fasnnygasparlopes@gmail.com">Fanny Lopes</a> and is
+      <a href="mailito:fasnnygasparlopes@gmail.com">Fanny Lopes</a>, is
       <a href="https://github.com/FannyLopes/weather-app" target="_blank"
         >open-sourced on GitHub</a
       >
