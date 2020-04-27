@@ -22,10 +22,28 @@ showDate.innerHTML = `${today} ${hours}:${minutes}`;
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("h4");
-  temperatureElement.innerHTML = `${temperature}ºC`;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${temperature}`;
   let description = document.querySelector("h3");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
+  let humidity = response.data.main.humidity;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}%`;
+  let wind = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind} km/h`;
+  let feelsLike = Math.round(response.data.main.feels_like);
+  feelsLikeElement = document.querySelector("#feelslike");
+  feelsLikeElement = `${feelsLike}`;
+  let descriptionImageElement = document.querySelector("#description-image");
+  descriptionImageElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  descriptionImageElement.setAttribute(
+    "alt",
+    response.data.weather[0].description
+  );
 }
 function showCity(event) {
   event.preventDefault();

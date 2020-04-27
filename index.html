@@ -59,24 +59,19 @@
           <div class="col-6">
             <div class="clearfix weather">
               <h4>
-                <img src="img/sunny.png" alt="Sunny" class="float-left" />
                 <div class="float-left">
-                  19 <small><a href="#">ºC</a> | <a href="#">ºF</a></small>
+                  <span id="temperature">19</span>
+                  <small><a href="#">ºC</a> | <a href="#">ºF</a></small>
                 </div>
+                <img class="float-right" id="description-image" />
               </h4>
             </div>
           </div>
           <div class="col-6" id="other-indicators">
             <ul>
-              <li>
-                Precipitation: 0%
-              </li>
-              <li>
-                Humidity: 79%
-              </li>
-              <li>
-                Wind: 2km/h
-              </li>
+              <li>Feels Like: <span id="feelslike"></span></li>
+              <li>Humidity: <span id="humidity"></span></li>
+              <li>Wind: <span id="wind"></span></li>
             </ul>
           </div>
         </div>
