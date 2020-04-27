@@ -44,23 +44,23 @@
             </div>
           </form>
         </div>
-        <div class="row" id="city-name">
-          <h1>Lisbon</h1>
-        </div>
-        <div class="row" id="date">
-          <h2></h2>
+        <div class="row">
+          <div class="col-6" id="city-name">
+            <h1></h1>
+          </div>
+          <div class="col-6" id="date">
+            <h2></h2>
+          </div>
         </div>
         <div class="row" id="weather-description">
-          <h3>
-            Sunny
-          </h3>
+          <h3></h3>
         </div>
         <div class="row" id="forecast">
           <div class="col-6">
             <div class="clearfix weather">
               <h4>
                 <div class="float-left">
-                  <span id="temperature">19</span>
+                  <span id="temperature"></span>
                   <small><a href="#">ºC</a> | <a href="#">ºF</a></small>
                 </div>
                 <img class="float-right" id="description-image" />
@@ -69,7 +69,11 @@
           </div>
           <div class="col-6" id="other-indicators">
             <ul>
-              <li>Feels Like: <span id="feelslike"></span></li>
+              <li>
+                Feels Like:
+                <span id="feelslike"></span>
+                <span><a href="#">ºC</a> | <a href="#">ºF</a></span>
+              </li>
               <li>Humidity: <span id="humidity"></span></li>
               <li>Wind: <span id="wind"></span></li>
             </ul>

@@ -24,17 +24,22 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}`;
+
   let description = document.querySelector("h3");
   description.innerHTML = response.data.weather[0].description;
+
   let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${humidity}%`;
+
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${wind} km/h`;
-  let feelsLike = Math.round(response.data.main.feels_like);
-  feelsLikeElement = document.querySelector("#feelslike");
-  feelsLikeElement = `${feelsLike}`;
+
+  let Feel = Math.round(response.data.main.temp);
+  let FeelElement = document.querySelector("#feelslike");
+  FeelElement.innerHTML = `${Feel}`;
+
   let descriptionImageElement = document.querySelector("#description-image");
   descriptionImageElement.setAttribute(
     "src",
