@@ -85,3 +85,10 @@ footer {
   text-align: center;
   margin-top: -20px;
 }
+.active {
+  color: #544e70;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}

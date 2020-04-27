@@ -37,6 +37,8 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}`;
 
+  celsiusTemperature = response.data.main.temp;
+
   let description = document.querySelector("h3");
   description.innerHTML = response.data.weather[0].description;
 
@@ -128,5 +130,44 @@ function searchLocation() {
   navigator.geolocation.getCurrentPosition(getLocation);
 }
 
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let feelElement = document.querySelector("#feelslike");
+  feelElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenehitLink.classList.add("active");
+  celsiusLink2.classList.remove("active");
+  fahrenehitLink2.classList.add("active");
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let feelElement = document.querySelector("#feelslike");
+  feelElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenehitLink.classList.remove("active");
+  celsiusLink2.classList.add("active");
+  fahrenehitLink2.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
 let button = document.querySelector("#button-current");
 button.addEventListener("click", searchLocation);
+
+let fahrenehitLink = document.querySelector("#fahrenheit-link");
+fahrenehitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let celsiusLink2 = document.querySelector("#celsius-link2");
+celsiusLink2.addEventListener("click", showCelsiusTemp);
+
+let fahrenehitLink2 = document.querySelector("#fahrenheit-link2");
+fahrenehitLink2.addEventListener("click", showFahrenheitTemp);
