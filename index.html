@@ -55,13 +55,16 @@
         <div class="row" id="weather-description">
           <h3></h3>
         </div>
-        <div class="row" id="forecast">
+        <div class="row">
           <div class="col-6">
             <div class="clearfix weather">
               <h4>
                 <div class="float-left">
                   <span id="temperature"></span>
-                  <small><a href="#">ºC</a> | <a href="#">ºF</a></small>
+                  <small
+                    ><a href="#" id="celsius-link">ºC</a> |
+                    <a href="#" id="fahrenheit-link">ºF</a></small
+                  >
                 </div>
                 <img class="float-right" id="description-image" />
               </h4>
@@ -79,16 +82,15 @@
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="row row-cols-5">
-            <div class="col">
-              <div class="card text-center" style="width: 5rem;">
-                <p class="card-header">Day 1</p>
-                <div class="card-body">
-                  <i class="fas fa-cloud-sun"></i>
-                  <br />
-                  Sunny
-                </div>
+        <div class="row" id="forecast">
+          <div class="col-5">
+            <div class="forecast-card">
+              <h5>
+                Tue
+              </h5>
+              <img src="img/sunny.png" />
+              <div class="forecast-temp">
+                16ºC
               </div>
             </div>
           </div>
