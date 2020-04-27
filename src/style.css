@@ -4,12 +4,7 @@
   padding: 20px;
   border: 1px solid #bac1c6;
   border-radius: 10px;
-  background-image: #f6f6f6;
-}
-l .footer-line {
-  font-size: 10px;
-  text-align: center;
-  display: block;
+  box-shadow: #544e70 1px 1px 5px;
 }
 body {
   font-family: "Noto Sans KR", sans-serif;
@@ -38,7 +33,7 @@ h1 {
 }
 h2 {
   font-size: 15px;
-  margin-left: -150px;
+  margin-left: 20px;
   padding-top: 8px;
 }
 h4 {
@@ -81,4 +76,10 @@ i {
 .card.text-center:hover {
   cursor: pointer;
   background: #e1e1f2;
+}
+footer {
+  font-size: 10px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -20px;
 }
