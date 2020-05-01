@@ -1,26 +1,30 @@
-let currentDate = new Date();
-let ListDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let today = ListDays[currentDate.getDay()];
-let hours = currentDate.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+function currentDate(timestamp) {
+  let currentDate = new Date();
+  let ListDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let today = ListDays[currentDate.getDay()];
+  let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${today} ${hours}:${minutes}`;
 }
 let showDate = document.querySelector("h2");
-showDate.innerHTML = `${today} ${hours}:${minutes}`;
+showDate.innerHTML = currentDate();
 
-function formatHour(timestamp) {
+function forecastHour(timestamp) {
+  let currentDate = new Date();
   let hours = currentDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -69,20 +73,19 @@ function showForecast(response) {
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML = `
-   <div class="col-5">
+    forecastElement.innerHTML += `
+   <div class="col">
       <div class="forecast-card">
         <h5>
-          ${formatHour(forecast.dt * 1000)}
+          ${forecastHour(forecast.dt * 1000)}
         </h5>
           <img src="http://openweathermap.org/img/wn/${
             forecast.weather[0].icon
           }@2x.png" />
         <div class="forecast-temp">
-          ${Math.round(forecast.main.temp)}º
-        </div>
+          ${Math.round(forecast.main.temp)} ºC
       </div>
     </div>
   `;
