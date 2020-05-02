@@ -4,20 +4,13 @@
   padding: 20px;
   border: 1px solid #bac1c6;
   border-radius: 10px;
-  box-shadow: #544e70 1px 1px 5px;
-  background-image: linear-gradient(to left, #bdbbbe 0%, #9d9ea3 100%),
-    radial-gradient(
-      88% 271%,
-      rgba(255, 255, 255, 0.25) 0%,
-      rgba(254, 254, 254, 0.25) 1%,
-      rgba(0, 0, 0, 0.25) 100%
-    ),
-    radial-gradient(
-      50% 100%,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  background-blend-mode: normal, lighten, soft-light;
+  box-shadow: #544e70 1px 1px 8px;
+  background-image: linear-gradient(
+    to top,
+    #c4c5c7 0%,
+    #dcdddf 52%,
+    #ebebeb 100%
+  );
 }
 body {
   font-family: "Noto Sans KR", sans-serif;
