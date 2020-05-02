@@ -24,7 +24,7 @@ let showDate = document.querySelector("h2");
 showDate.innerHTML = currentDate();
 
 function forecastHour(timestamp) {
-  let currentDate = new Date();
+  let currentDate = new Date(timestamp);
   let hours = currentDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -143,12 +143,39 @@ function weatherCurrentLocation(response) {
   );
 }
 
+function showForecastCurrentLocation(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+   <div class="col">
+      <div class="forecast-card">
+        <h5>
+          ${forecastHour(forecast.dt * 1000)}
+        </h5>
+          <img src="http://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+          }@2x.png" />
+        <div class="forecast-temp">
+          ${Math.round(forecast.main.temp)} ºC
+      </div>
+    </div>
+  `;
+  }
+}
+
 function getLocation(position) {
   let apiKey = "ad1a51d08b6686a739675f6d3e3d864c";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(weatherCurrentLocation);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showForecastCurrentLocation);
 }
 
 function searchLocation() {
